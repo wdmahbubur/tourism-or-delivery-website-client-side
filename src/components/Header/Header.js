@@ -3,7 +3,7 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 const Header = () => {
     return (
-        <header>
+        <header className="sticky-top">
             <Navbar collapseOnSelect expand="lg" bg="white" variant="light" className="shadow-sm">
                 <Container>
                     <Navbar.Brand href="#home">iTravel</Navbar.Brand>

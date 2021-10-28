@@ -1,0 +1,22 @@
+.testimonial {
+    width: 80%;
+    margin: 0 auto;
+}
+.testimonial .carousel-item img {
+    height: 100px;
+    width: 100px;
+    border: 4px solid #0d6efd;
+    border-radius: 50%;
+}
+.testimonial .carousel-item .carousel-caption {
+    position: relative;
+    right: 0;
+    left: 0;
+    color: #000;
+    margin-top: 10px;
+}
+.carousel-indicators,
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
