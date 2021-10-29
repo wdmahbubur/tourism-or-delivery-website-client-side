@@ -7,20 +7,20 @@ import WhyChooseUs from '../../WhyChooseUs/WhyChooseUs';
 
 const Home = () => {
     return (
-        <div>
+        <div id="home">
             <section>
                 <BannerCarousel></BannerCarousel>
             </section>
             <section className="py-5 ">
                 <WhyChooseUs></WhyChooseUs>
             </section>
-            <section className="py-5">
+            <section className="py-5" id="services">
                 <Services></Services>
             </section>
-            <section className="py-5 bg-light">
+            <section className="py-5 bg-light" id="about">
                 <AboutiTravel></AboutiTravel>
             </section>
-            <section className="py-5">
+            <section className="py-5" id="testimonials">
                 <Testimonials></Testimonials>
             </section>
         </div>
