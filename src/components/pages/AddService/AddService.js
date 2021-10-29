@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 const AddService = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     async function onSubmit(data) {
         const photo = data.photo[0];
         const title = data.title;
@@ -20,19 +20,19 @@ const AddService = () => {
             data.photo = res.data.data.display_url;
         })
 
-        fetch('http://localhost:5000/service', {
-            method: "post",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
+        axios.post('http://localhost:5000/service', {
+            service: data
         })
             .then(response => {
-                console.log(response);
+                if (response) {
+                    alert("Service Added Successful")
+                }
             })
             .catch(function (error) {
                 console.log(error);
             });
+        reset();
+
 
     };
     return (
