@@ -19,7 +19,20 @@ const AddService = () => {
         }).then(res => {
             data.photo = res.data.data.display_url;
         })
-        console.log(data);
+
+        fetch('http://localhost:5000/service', {
+            method: "post",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
     };
     return (
@@ -31,9 +44,9 @@ const AddService = () => {
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)} className="w-75 mx-auto">
 
-                    <input {...register("title", { required: false })} className="form-control my-3 py-2" placeholder="Enter Service Title" />
+                    <input {...register("title", { required: true })} className="form-control my-3 py-2" placeholder="Enter Service Title" />
 
-                    <textarea {...register("address", { required: false })} className="form-control my-3 py-2" placeholder="Enter Short Description"></textarea>
+                    <textarea {...register("shortDesc", { required: true })} className="form-control my-3 py-2" placeholder="Enter Short Description"></textarea>
 
                     <input type="file" {...register("photo", { required: true })} className="form-control my-3 py-2" />
 
