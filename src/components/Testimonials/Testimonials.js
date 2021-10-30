@@ -27,8 +27,8 @@ const Testimonials = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <blockquote>"I love the way you guys are always very helpful and accomodating. Your service is excellent and I am more than happy to use your organisation for all future holidays."</blockquote>
-                        <p>Ivan Menezes</p>
+                        <blockquote>"I found Travel Online easy to use, and felt that I could email/ call Lisa if I had any queries regarding our accommodation. Everything went to plan and our proposed itinerary was very clear."</blockquote>
+                        <p>-Caroline Rowlinson</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>

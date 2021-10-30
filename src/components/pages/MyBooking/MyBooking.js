@@ -49,23 +49,17 @@ const MyBooking = () => {
                     <Tbody>
                         {
 
-                            bookings.length > 0 ?
-                                bookings.map(booking => <Tr key={booking._id}>
-                                    <Td>{count++}</Td>
-                                    <Td>{booking.tour}</Td>
-                                    <Td>{booking.name}</Td>
-                                    <Td>{booking.bookingDate}</Td>
-                                    <Td>{booking.person}</Td>
-                                    <Td>{booking.totalCost}</Td>
-                                    <Td>{booking.status}</Td>
-                                    <Td><Button variant="danger" onClick={() => cancelBooking(booking._id)}>Cancel Booking</Button></Td>
-                                </Tr>)
-                                :
-                                <Tr>
-                                    <Td colSpan="8" className="text-center text-warning">
-                                        No Booking Found
-                                    </Td>
-                                </Tr>
+                            bookings.map(booking => <Tr key={booking._id}>
+                                <Td>{count++}</Td>
+                                <Td>{booking.tour}</Td>
+                                <Td>{booking.name}</Td>
+                                <Td>{booking.bookingDate}</Td>
+                                <Td>{booking.person}</Td>
+                                <Td>{booking.totalCost}</Td>
+                                <Td>{booking.status}</Td>
+                                <Td><Button variant="danger" onClick={() => cancelBooking(booking._id)}>Cancel Booking</Button></Td>
+                            </Tr>)
+
                         }
 
 
