@@ -9,7 +9,7 @@ const Services = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get('http://localhost:5000/services')
+        axios.get('https://pacific-harbor-14083.herokuapp.com/services')
             .then(response => {
                 setServices(response.data)
                 setLoading(false);

@@ -20,7 +20,7 @@ const AddService = () => {
             data.photo = res.data.data.display_url;
         })
 
-        axios.post('http://localhost:5000/service', {
+        axios.post('https://pacific-harbor-14083.herokuapp.com/service', {
             service: data
         })
             .then(response => {

@@ -14,7 +14,7 @@ const Booking = () => {
     let history = useHistory();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/service/${id}`)
+        axios.get(`https://pacific-harbor-14083.herokuapp.com/service/${id}`)
             .then(res => {
                 setService(res.data);
                 setTotalCost(res.data.cost);
@@ -33,7 +33,7 @@ const Booking = () => {
         data.totalCost = totalCost;
         data.tour = service.title;
         data.status = "Pending";
-        axios.post('http://localhost:5000/booking', {
+        axios.post('https://pacific-harbor-14083.herokuapp.com/booking', {
             booking: data
         })
             .then(res => {

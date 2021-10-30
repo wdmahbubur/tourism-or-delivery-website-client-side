@@ -11,7 +11,7 @@ const ManageAllBooking = () => {
     let count = 1;
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/booking`)
+        axios.get(`https://pacific-harbor-14083.herokuapp.com/booking`)
             .then(res => {
                 setBookings(res.data);
             })
@@ -24,7 +24,7 @@ const ManageAllBooking = () => {
         } else {
             const confirm = window.confirm("Are you sure? approved this booking");
             if (confirm) {
-                axios.post(`http://localhost:5000/service/approved/${id}`)
+                axios.post(`https://pacific-harbor-14083.herokuapp.com/service/approved/${id}`)
                     .then(res => {
                         if (res) {
                             alert("Approved Success");
@@ -40,7 +40,7 @@ const ManageAllBooking = () => {
     const cancelBooking = (id) => {
         const confirm = window.confirm("Are you sure? cancel this booking");
         if (confirm) {
-            axios.delete(`http://localhost:5000/service/delete/${id}`)
+            axios.delete(`https://pacific-harbor-14083.herokuapp.com/service/delete/${id}`)
                 .then(res => {
                     if (res) {
                         alert("Delete Success");
