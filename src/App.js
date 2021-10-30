@@ -11,6 +11,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import MyBooking from './components/pages/MyBooking/MyBooking';
 import ManageAllBooking from './components/pages/ManageAllBooking/ManageAllBooking';
 import Booking from './components/pages/Booking/Booking';
+import NotFoundPage from './components/pages/NotFoundPage/NotFoundPage';
 function App() {
   return (
     <div>
@@ -36,6 +37,9 @@ function App() {
             <PrivateRoute path='/manage-booking'>
               <ManageAllBooking></ManageAllBooking>
             </PrivateRoute>
+            <Route exact path='*'>
+              <NotFoundPage></NotFoundPage>
+            </Route>
           </Switch>
           <Footer></Footer>
         </Router>
