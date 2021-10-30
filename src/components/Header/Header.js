@@ -1,12 +1,14 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
+import useAuth from '../../hooks/useAuth';
 const Header = () => {
+    const { user, logOut } = useAuth();
     return (
         <header className="sticky-top">
             <Navbar collapseOnSelect expand="lg" bg="white" variant="light" className="shadow-sm">
-                <Container>
+                <Container fluid>
                     <Navbar.Brand as={Link} to="/">iTravel</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -15,19 +17,22 @@ const Header = () => {
                             <Nav.Link as={NavHashLink} smooth to="/#services">Services</Nav.Link>
                             <Nav.Link as={NavHashLink} smooth to="/#about">About</Nav.Link>
                             <Nav.Link as={NavHashLink} smooth to="/#testimonials">Testimonials</Nav.Link>
-                            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                            </NavDropdown>
+                            <Nav.Link as={NavHashLink} smooth to="/#contact">Contact</Nav.Link>
+
                         </Nav>
                         <Nav>
-                            <Nav.Link as={Link} to="/add-service">Add Services</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
-                            </Nav.Link>
+                            {
+                                user?.email ? <>
+
+                                    <Nav.Link as={Link} to="/my-booking">My Booking</Nav.Link>
+                                    <Nav.Link as={Link} to="/manage-booking">Manage All Booking</Nav.Link>
+                                    <Nav.Link as={Link} to="/add-service">Add A New Service</Nav.Link>
+                                    <Nav.Link to="/#" className="text-primary">Hi! {user.displayName}</Nav.Link>
+                                    <Button variant="danger" onClick={logOut}>Logout</Button>
+                                </>
+                                    :
+                                    <Nav.Link as={Link} to="/login" className="btn btn-success text-white">Login</Nav.Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

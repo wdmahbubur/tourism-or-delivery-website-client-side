@@ -44,9 +44,13 @@ const AddService = () => {
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)} className="w-75 mx-auto">
 
-                    <input {...register("title", { required: true })} className="form-control my-3 py-2" placeholder="Enter Service Title" />
+                    <input {...register("title", { required: true })} className="form-control my-3 py-2" placeholder="Service Title" />
 
-                    <textarea {...register("shortDesc", { required: true })} className="form-control my-3 py-2" placeholder="Enter Short Description"></textarea>
+                    <textarea {...register("shortDesc", { required: true, min: 30, max: 80 })} className="form-control my-3 py-2" placeholder="Short Description"></textarea>
+
+                    <input type="number" {...register("cost", { required: true })} className="form-control my-3 py-2" placeholder="Tour Costing" />
+
+                    <input type="number" {...register("duration", { required: true })} className="form-control my-3 py-2" placeholder="Tour Duration" />
 
                     <input type="file" {...register("photo", { required: true })} className="form-control my-3 py-2" />
 
