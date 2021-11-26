@@ -2,14 +2,14 @@
 
 Website Live Preview: https://tourism-agency-6a87c.web.app/
 
-This is a Travel Agency Website. It's a MERN Stack project. Use ReactJS, Bootstrap, Firebase, react-router-dom, Mongodb for Database, NodeJS and ExpressJS for backend, etc. User See the Travel services and booking service for travel. User login to get more options. Full website complete with Bootstrap CSS Framework.
+It is a Travel Agency Website. It's a MERN Stack project. Used ReactJS, Bootstrap, Firebase, react-router-dom, Mongodb for Database, NodeJS and ExpressJS for backend, etc. User sees the travel services and booking travel services. User login to get more options.
 
 ## Features
-- Full Website is responsive on mobile and tablet
+- Full website is responsive on mobile and tablet
 - User using google for sign in
-- All image are also optimized and load from imgbb.
-- Api load from different server.
-- Use NodeJS and ExpressJS for backend server.
-- Add new service image automatically upload in imgbb.
-- User booking service, see her/his booking, update booking and cancel booking.
-- User doesn't access private route without login
+- All images are also optimized and loaded from IMGBB.
+- A load from a different server.
+- Use NodeJS and ExpressJS for the backend server.
+- Add new service and image automatically upload in IMGBB.
+- Users booking service, see their booking, update booking and cancel a booking.
+- User doesn't access the private route without a login
